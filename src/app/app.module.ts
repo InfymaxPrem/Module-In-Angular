@@ -1,8 +1,19 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { Routes, RouterModule } from '@angular/router';
+//common-modules---------
 
-import { AppRoutingModule } from './app-routing.module';
+import { StudentModule } from './student/student.module';
+
 import { AppComponent } from './app.component';
+import { StudentComponent } from './student/student/student.component';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: StudentComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -10,7 +21,8 @@ import { AppComponent } from './app.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    StudentModule,
+    RouterModule.forRoot(routes),
   ],
   providers: [],
   bootstrap: [AppComponent]
